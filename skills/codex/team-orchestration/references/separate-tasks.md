@@ -6,9 +6,9 @@ Read this reference only when the user explicitly requests separate persistent C
 
 Only activate on an explicit request for separate persistent Codex tasks. Loading this skill for inspection is not permission to create tasks. Do not enable it for every project or add a global automatic trigger.
 
-The user talks to the current task, **Mastermind**, which owns direction, scope and final acceptance. Keep its current model; the user's preferred setup is Astra. **Orchestrator** uses Sol High for execution and routine repairs; **Muscle** uses Terra High selectively for bounded work or meaningful independent review. These are Codex desktop tasks, not CLI processes, Hermes identities or native subagents. This explicitly invoked setup requests the two named project tasks; do not create unrelated tasks.
+The user talks to the current task, **Mastermind**, which owns direction, scope and final acceptance. Keep its current model; the user's preferred setup is GPT-6 Astra. **Orchestrator** uses GPT-6.1 Sol for implementation and coordination. **Muscle** uses GPT-6 Luna for precise, bounded work. For substantive independent review, use a separate GPT-6.1 Sol context instead of assigning broad review to Luna. Follow the role and effort table in [SKILL.md](../SKILL.md). These are persistent Codex desktop tasks; creating them requires the user's explicit request for this mode.
 
-Use the exact model IDs supported by the current app tools (preferred family mapping: gpt-5.6-sol / high and gpt-5.6-terra / high). Do not silently substitute another model when unavailable. Report the limitation and ask only for the missing choice. Never claim verified monetary savings: delegation adds context/handoff overhead and subscription allowance differs from API billing.
+Use exact IDs supported by the target host's current app tools: `gpt-6.1-sol` for Orchestrator, `gpt-6-luna` for Muscle, and `gpt-6.1-sol` for a separately needed reviewer. Request medium/high for Sol and low/high for Luna according to the assigned work; check supported efforts before dispatch. A reviewer is optional and does not justify an idle extra task. Preserve an existing task's model unless the user authorizes a change. If a preferred model is unavailable, use an already authorized alternative or ask for the missing choice. Never infer subscription savings from API pricing or an accepted model name.
 
 ## Discover before creating
 
@@ -34,7 +34,7 @@ Mastermind sends a concrete slice to Orchestrator through the app: objective, ac
 
 Orchestrator can resolve routine implementation bugs and adjacent code/configuration repairs within the approved objective without a new Mastermind slice for each fix. Verify proportionately and include repairs in the final handoff. After two unsuccessful repair rounds on the same blocker, escalate with evidence. Escalate material scope/architecture changes or actions requiring new user authorization immediately. Existing user authorization persists; do not manufacture repeat approval gates.
 
-Use Muscle only for useful bounded work or meaningful independent review. Sol may verify small reversible changes directly. Honor explicit review requirements on a slice. Keep one active assignment per worker, no concurrent writes to the same files, no extra workers or nested delegation without authorization. Explicitly review/integrate worktree output; it does not automatically appear in main.
+Use Muscle for focused implementation or checks with clear expected outcomes. Orchestrator may verify small reversible changes directly; use a separate Sol reviewer when independent judgment adds value or is explicitly required. Keep one active assignment per worker and one owner per writable file. Extra tasks and nested delegation remain within the user's authorization. Explicitly review and integrate worktree output; it does not automatically appear in main.
 
 Paid generation, ambiguous retries, deployment, publishing and destructive actions stay within the user's actual authorization. Routine repair authority does not authorize extra spending. No automatic paid fallback or replay.
 
